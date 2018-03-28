@@ -21,7 +21,7 @@ Route::get('/', function () {
 /*
 Route::get('tasks/{id}','TasksController@show');
 Route::post('tasks', 'TasksController@store');
-Route::put('messages/{id}', 'TasksController@update');
+Route::put('tasks/{id}', 'TasksController@update');
 Route::delete('tasks/{id}', 'TasksController@destroy');
 
 Route::get('tasks', 'TasksController@index');
