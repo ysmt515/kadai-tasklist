@@ -62,7 +62,11 @@ class TasksController extends Controller
      //getでtasks/idにアクセスされた場合の「取得表示処理」
     public function show($id)
     {
-        //
+        $task = Task::find($id);
+        
+        return view('tasks.show',[
+            'task' => $task,
+            ]);
     }
 
     /**
