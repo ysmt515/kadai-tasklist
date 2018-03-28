@@ -53,7 +53,11 @@ class TasksController extends Controller
      //postでtasks/にアクセスされた場合の「新規登録処理」
     public function store(Request $request)
     {
-        //
+        $task = new Task;
+        $task->content = $request->content;
+        $task->save();
+        
+        return redirect('/');
     }
 
     /**
@@ -83,7 +87,11 @@ class TasksController extends Controller
      //getでtasks/id/editにアクセスされた場合の「更新画面表示処理」
     public function edit($id)
     {
-        //
+        $task = Task::find($id);
+        
+        return view('tasks.edit',[
+            'task' => $task,
+            ]);
     }
 
     /**
